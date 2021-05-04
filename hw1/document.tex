@@ -1,0 +1,273 @@
+\documentclass{article}
+%\usepackage{blindtext}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{amsmath}
+%\usepackage{bm}
+\usepackage[left=2cm, right=2cm, top=0.1cm, bottom=1.2cm]{geometry}
+\usepackage{graphicx}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+	%backgroundcolor=\color{red!50!green!50!blue!50},%程式碼塊背景色為淺灰色
+	rulesepcolor= \color{gray}, %程式碼塊邊框顏色
+	breaklines=true,  %程式碼過長則換行
+	numbers=left, %行號在左側顯示
+	numberstyle= \small,%行號字型
+	%keywordstyle= \color{red},%關鍵字顏色
+	commentstyle=\color{gray}, %註釋顏色
+	frame=shadowbox%用方框框住程式碼塊
+}
+
+\title{Machine Learning Foundations HW1}
+\author{B06502152, 許書銓}
+\date{\today}
+
+
+\begin{document}
+\begin{CJK*}{UTF8}{bsmi}
+\maketitle
+\hrulefill
+\section{}%1
+The answer is (d)
+
+(a) A lottery is basicly a random process, no logic or pattern.
+(b) No need ML.
+(c) No need ML.
+
+\section{}%2
+
+The answer is (e)
+
+(a) It is basicly a random process.
+(b) It's a "human-determining" process.
+(c) No "machine-learning" process include, human-determining.
+(d) No "machine-learning" process include, human-determining.
+
+\section{}%3
+The answer is unchanged, (d). 
+
+From the lecture note, we realize that will be bounded by $\frac{R^2}{\rho^2}\), and the fraction of $R^2$ and $\rho^2 $ will cancel the $X_n^2$ term. Hence the scale of  $X_n^2$ term
+is no function.
+
+\section{}%4
+The answer should be (c). From lecture note of the coverage of PLA, we realize that, 
+
+
+\begin{displaymath} 
+	{\bf w_f^T}{\bf w_{t+1}} \geq {\bf w_f^T}{\bf w_{t}} + min\frac{y_n {\bf w_f^T}{\bf x_{n}}}{||\bf x_{n}||}
+\end{displaymath} 
+ 
+After T times iteration, we get
+\begin{displaymath} 
+		{\bf w_f^T}{\bf w_{t+1}} \geq T min\frac{y_n {\bf w_f^T}{\bf x_{n}}}{||\bf x_{n}||}
+\end{displaymath} 
+
+From the other bound equation
+\begin{displaymath} 
+		||{\bf w_{T+1}}||^2 \leq max\frac{||\\{\bf x_n}||^2}{||\\{\bf x_n}||^2}
+\end{displaymath} 
+
+After T times iteration, we get
+\begin{displaymath} 
+	||{\bf w_{T+1}}||^2 \leq T
+\end{displaymath} 
+
+From the above equations, we get
+\begin{displaymath} 
+	cos\theta \leq \frac{{\bf w_f^T}{\bf w_{t}}}{||\\{\bf w_f}||*||\\{\bf x_n}||}
+	\leq T * \frac{y_n {\bf w_f^T}{\bf x_{n}}}{||\\{\bf w_f}||*||\bf x_{n}||} * \frac{1}{T^{1/2}}
+\end{displaymath} 
+Thus, after change the variable into $\rho$
+
+\begin{displaymath} 
+	T \leq \frac{1}{\rho^2}
+\end{displaymath} 
+
+\section{}%5
+The answer should be (d). 
+
+(a) If we multiply each side with $y_n$ and $x_n$, the right hand side will be $y_nw_tx_n$ + 2$||y_n||^2||x_n||^2$. The first term is negative, and the second term is positive; however, we can't identify which one is larger, which means we are not sure that the entire tight hand side will be a positive number. (b) Same reason as (a). (c) The second term in right hand side will be $-y_nw_tx_n$ after multiply with $y_n$ and $x_n$, which means the entire right hand side will be 0. (d) This condition share some value will (c); however, after plus 1 in the second term, which will leave the right hand side with $||y_n||^2||x_n||^2$. (e) This condition share some value will (c); however, the sign before the second term is "minus", shich means after work with the first term, the first term will not be canceled.
+
+\section{}%6
+The answer should be (c). 
+
+\begin{figure}[ht]
+\graphicspath{/Users/leo/Desktop/NTU/Senior/HTML/hw1}
+\begin{center}
+	\includegraphics[scale=0.12]{q6_1.jpg}
+	\caption{question 6. hand-writing} \vskip 1pt
+\end{center}
+\end{figure}
+
+\newpage
+\begin{figure}[ht]
+\graphicspath{/Users/leo/Desktop/NTU/Senior/HTML/hw1}
+\begin{center}
+	\includegraphics[scale=0.12]{q6_2.jpg}
+	\caption{question 6. hand-writing} \vskip 1pt
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\graphicspath{/Users/leo/Desktop/NTU/Senior/HTML/hw1}
+\begin{center}
+	\includegraphics[scale=0.12]{q6_3.jpg}
+	\caption{question 6. hand-writing} \vskip 1pt
+\end{center}
+\end{figure}
+
+\newpage
+
+
+\section{}%7
+The answer should be (e) since the "judge" environment denotes that the learning process includes some kind of feedbacks.
+
+\section{}%8
+The answer should be (b).  Human actes with constrained choices implies multi-class. Another video without human record implies semi-supervised. Learning from all video to obtain a hypothesis implies batch learning. No concrete feature implies raw feature.
+
+\section{}%9
+The answer should be (e) since whenever your $E_{in}(g)$ is small as 0, the posibility that the data outside $D$ is still incorrect at all.
+
+\begin{figure}[ht]
+	\graphicspath{/Users/leo/Desktop/NTU/Senior/HTML/hw1}
+	\begin{center}
+		\includegraphics[scale=0.1]{q9.jpg}
+		\caption{question 9. hand-writing} \vskip 1pt
+	\end{center}
+\end{figure}
+
+\section{}%10
+The answer should be (b). Since, the possibility of coming up with the unwanted side is $1-(\frac{1}{2} - \epsilon) $, and the related possibility is $1-(1-\delta) = \delta$. Hence, 
+\begin{displaymath} 
+	P[|1-(\frac{1}{2} - \epsilon)|] \leq \delta = 2*exp(-2*(\epsilon^2)N) 
+\end{displaymath} 
+
+\begin{displaymath} 
+	\ln(\delta/2) \geq -2*(\epsilon^2)N
+ \end{displaymath} 
+
+\begin{displaymath} 
+	N \geq \frac{\ln(2/\delta)}{2\epsilon^2}
+\end{displaymath} 
+
+\section{}%11
+The answer should be (c). Since for each  example in sample data, the possibility of $E_{in}(x) = 0 $ is $\frac{1}{2}$ ( $P[sign(x_1) = sign(x_2)] = 1/2$ ). Thus, the possibility of the whole process is $(\frac{1}{2}) ^ 5$
+
+\newpage
+\section{}%12
+The answer should be (d). 
+\begin{figure}[ht]
+	\graphicspath{/Users/leo/Desktop/NTU/Senior/HTML/hw1}
+	\begin{center}
+		\includegraphics[scale=0.1]{q12.jpg}
+		\caption{question 12. hand-writing} \vskip 1pt
+	\end{center}
+\end{figure}
+
+\section{}%13
+The answer should be (b). Since the bad data for $h_1$ is exactly the same as $h_{d+1}$,  and so as the relationship between $h_2$ and $h_{d+2}$ ... to  $h_d$ and $h_{2d}$
+
+\section{}%14
+The answer should be (d). For picking five green 3's, the possibility in each term is $\frac{2}{4}$. The possiblity for each condition is (a) $\frac{1}{4}$ (b) $\frac{1}{4}$ (c) $\frac{3}{4}$ (d) $\frac{2}{4}$ (e) $\frac{1}{4}$
+
+\section{}%15
+The answer should be (d). The possible combination of all green 1's is none. All green 2's is (A,B,D). All green 3's is (B,D). All green 4's is (A,B). All green 5's is (D). All green 6's is (A,C). However, (B,D) combination, (A,B) combination and (D) will be cover in the combination of (A,B,D). All we have to count is all green 2's and all green 6's case, and minus the combination of all (A). Hence, the possiblity is 
+
+\begin{displaymath} 
+	\frac{3^5+2^5-1}{4^5} = \frac{274}{1024}
+\end{displaymath} 
+
+\section{}%16
+The following my code in python3.6.10.
+\begin{lstlisting}[language={python}]
+import numpy as np
+import random
+import py_compile
+import matplotlib.pyplot as plt
+
+#main
+data = np.genfromtxt("hw1_train.dat.txt")
+x_0 = input('input x_0: ')
+scale = input('input the value of scaling down the vector: ')
+
+x_0 = int(x_0)
+scale = int(scale)
+
+result = []
+result_w = []
+
+X = data[:, : -1]
+y = data[:, data.shape[1]-1]
+X = np.c_[(x_0 * np.ones(X.shape[0]), X)]
+X = X / scale
+
+for i in range(1000):
+	w = np.zeros((1, 11), np.float)
+	t = 0 #count the number of iteration
+	correct = 0
+
+	while correct < 5 * X.shape[0]:
+		k = random.randint(0, X.shape[0]-1)
+		sign = np.sign(np.inner(X[k, :], w))
+
+		if sign*y[k] <= 0:
+			correct = 0
+			w +=  y[k] * X[k, :]
+			t += 1
+		else:
+			correct += 1
+
+	result.append(t)
+	result_w.append(w[0][0])
+
+#plt.hist(result)
+#plt.show()
+print("median of updates: ", np.median(result))
+print("median of w_0: ", np.median(result_w))
+py_compile.compile("/Users/leo/Desktop/hello/ML/hw1/ml_hw1.py")
+\end{lstlisting}
+
+\begin{lstlisting}[language={python}]
+	input x_0: 1
+	input the value of scaling down the vector: 1
+	median of updates:  11.0
+	median of w_0:  -7.0
+\end{lstlisting}
+
+\section{}%17
+Same code in question (16). 
+
+\newpage
+\section{}%18
+most close to 14.
+\begin{lstlisting}[language={python}]
+	input x_0: 10
+	input the value of scaling down the vector: 1
+	median of updates:  15.0
+	median of w_0:  0.0
+\end{lstlisting}
+
+\section{}%19
+\begin{lstlisting}[language={python}]
+	input x_0: 0
+	input the value of scaling down the vector: 1
+	median of updates:  17.0
+	median of w_0:  0.0
+\end{lstlisting}
+
+\section{}%20
+\begin{lstlisting}[language={python}]
+	input x_0: 0
+	input the value of scaling down the vector: 4
+	median of updates:  17.0
+	median of w_0:  0.0
+\end{lstlisting}
+
+
+\end{CJK*}
+\end{document}
+
+
